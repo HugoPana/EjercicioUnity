@@ -6,11 +6,13 @@ public class Bird : MonoBehaviour {
 
     private bool isDead;
     private Rigidbody2D rb2d;
+    private Animator anim;
     public float upForce = 200f;
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
     // Start is called before the first frame update
     private void Start(){
@@ -31,5 +33,6 @@ public class Bird : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isDead = true;
+        anim.SetTrigger("Die");
     }
 }
