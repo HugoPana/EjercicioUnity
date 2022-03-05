@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour{
 
         score++;
         scoreText.text = "Score: " + score;
+        SoundSystem.instance.PlayCoin();
     }
 
     // Update is called once per frame

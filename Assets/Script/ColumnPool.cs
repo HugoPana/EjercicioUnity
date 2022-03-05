@@ -28,6 +28,8 @@ public class ColumnPool : MonoBehaviour
         {
             columns[i] = Instantiate(columnPrefab, objectPoolPosition, Quaternion.identity);
         }
+
+        SpawnColumn();
     }
 
     // Update is called once per frame
@@ -37,14 +39,19 @@ public class ColumnPool : MonoBehaviour
         if(!GameController.instance.gameOver && timeSinceLastSpawned >= spawnRate)
         {
             timeSinceLastSpawned = 0;
-            float spawnYPosition = Random.Range(columnMin, columnMax);
-            columns[currentColumn].transform.position = new Vector2(spawnXPosition, spawnYPosition);
+            SpawnColumn();
+        }
+    }
 
-            currentColumn++;
-            if(currentColumn >= columnPoolSize)
-            {
-                currentColumn = 0;
-            }
+    void SpawnColumn()
+    {
+        float spawnYPosition = Random.Range(columnMin, columnMax);
+        columns[currentColumn].transform.position = new Vector2(spawnXPosition, spawnYPosition);
+        currentColumn++;
+
+        if (currentColumn >= columnPoolSize)
+        {
+            currentColumn = 0;
         }
     }
 }
