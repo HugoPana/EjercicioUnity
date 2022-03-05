@@ -1031,6 +1031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1446027778}
   - component: {fileID: 1446027779}
+  - component: {fileID: 1446027780}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1068,6 +1069,24 @@ MonoBehaviour:
   gameOver: 0
   scrollSpeed: -1.5
   scoreText: {fileID: 1516964102}
+--- !u!114 &1446027780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446027777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852dce5a5ac8c2a449e6a200a417577c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnPoolSize: 5
+  columnPrefab: {fileID: 2465047270774916296, guid: 2278da38bd612714e9021f0e5db49b42, type: 3}
+  columnMin: -2.9
+  columnMax: 1.4
+  spawnXPosition: 10
+  spawnRate: 4
 --- !u!1 &1516964099
 GameObject:
   m_ObjectHideFlags: 0
